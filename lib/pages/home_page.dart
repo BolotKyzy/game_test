@@ -1,9 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:which_country/components/continent_card.dart';
 import 'package:which_country/constants/app_color.dart';
 import 'package:which_country/constants/app_text.dart';
 import 'package:which_country/models/continent.dart';
-import 'package:which_country/pages/asia.dart';
+import 'package:which_country/pages/test_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -34,13 +36,6 @@ class HomePage extends StatelessWidget {
               )),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push<void>(context, MaterialPageRoute(builder: (context) {
-            return const Asia();
-          }));
-        },
-      ),
       body: Column(children: [
         const Divider(
           height: 2,
@@ -57,7 +52,17 @@ class HomePage extends StatelessWidget {
               itemCount: continents.length,
               itemBuilder: (BuildContext context, int index) {
                 final item = continents[index];
-                return ContinentCard(item: item);
+                return ContinentCard(
+                  item: item,
+                  onTap: () {
+                    Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const TestPage(),
+                      ),
+                    );
+                  },
+                );
               }),
         ),
       ]),
