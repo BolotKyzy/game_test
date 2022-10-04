@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:which_country/constants/app_color.dart';
 
 class TestPageAppBar extends StatelessWidget {
-  const TestPageAppBar({
-    Key? key,
-  }) : super(key: key);
+  const TestPageAppBar(
+      {Key? key,
+      required this.correctAnswer,
+      required this.wrongAnswer,
+      required this.step})
+      : super(key: key);
+  final int correctAnswer;
+  final int wrongAnswer;
+  final int step;
 
   @override
   Widget build(BuildContext context) {
@@ -17,24 +23,23 @@ class TestPageAppBar extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
             child: Row(
-              children: const [
-                Icon(Icons.tips_and_updates, color: AppColors.yellow),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  child: Text(
-                    '32',
-                    style: TextStyle(fontSize: 18),
-                  ),
+              children: [
+                Text(
+                  '$wrongAnswer',
+                  style: const TextStyle(color: AppColors.red, fontSize: 16),
                 ),
-                Icon(
-                  Icons.add_circle,
-                  color: AppColors.green,
-                )
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                ),
+                Text(
+                  '$correctAnswer',
+                  style: const TextStyle(color: AppColors.green, fontSize: 16),
+                ),
               ],
             ),
           ),
         ),
-        Text('3'),
+        Text(step.toString()),
         Row(children: [
           SizedBox(
             width: 70,

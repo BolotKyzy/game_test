@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:which_country/constants/app_text.dart';
+import 'package:which_country/models/questions.dart';
 
 class Continent {
-  Continent({required this.name, required this.icon, required this.color});
+  Continent(
+      {required this.name,
+      required this.icon,
+      required this.color,
+      this.questions});
   final String name;
   final String icon;
   final Color color;
+  final List<Question>? questions;
 }
 
 final africa = Continent(
@@ -20,10 +26,10 @@ final europe = Continent(
   color: Color(0xff81A2FD),
 );
 final asia = Continent(
-  name: AppText.asia,
-  icon: 'asia',
-  color: Color(0xffFE8180),
-);
+    name: AppText.asia,
+    icon: 'asia',
+    color: Color(0xffFE8180),
+    questions: asiaQuestions);
 
 final northAmerica = Continent(
   name: AppText.northAmerica,

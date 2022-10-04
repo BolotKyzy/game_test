@@ -55,12 +55,26 @@ class HomePage extends StatelessWidget {
                 return ContinentCard(
                   item: item,
                   onTap: () {
-                    Navigator.push<void>(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) => const TestPage(),
-                      ),
-                    );
+                    if (continents[index].questions != null) {
+                      Navigator.push<void>(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              TestPage(questions: continents[index].questions),
+                        ),
+                      );
+                    } else {
+                      final snackBar = SnackBar(
+                        content: const Text('Oops! No questions!'),
+                        action: SnackBarAction(
+                          label: 'Undo',
+                          onPressed: () {
+                            // Some code to undo the change.
+                          },
+                        ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
                   },
                 );
               }),
