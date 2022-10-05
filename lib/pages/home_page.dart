@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:which_country/components/continent_card.dart';
 import 'package:which_country/constants/app_color.dart';

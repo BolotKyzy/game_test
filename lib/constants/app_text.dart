@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppText {
-  static const String title = 'Capital of the world';
+  static const String title = 'Дүйнөдөгү борбор шаарлар';
   static const String europe = 'Europe';
   static const String australia = 'Australia';
   static const String southAmerica = 'South America';

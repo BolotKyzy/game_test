@@ -61,7 +61,7 @@ class _TestPageState extends State<TestPage> {
                     activeColor = AppColors.red;
                   });
 
-            if (step < 9) {
+            if (step < widget.questions.length - 1) {
               setState(() {
                 sliderValue += 2;
               });
@@ -79,7 +79,7 @@ class _TestPageState extends State<TestPage> {
                   ),
                   content: Text(
                     textAlign: TextAlign.center,
-                    '$correctAnswer/10',
+                    '$correctAnswer/${widget.questions.length}',
                     style: const TextStyle(
                         color: AppColors.red,
                         fontSize: 20,
