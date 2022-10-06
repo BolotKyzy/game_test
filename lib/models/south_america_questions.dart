@@ -117,4 +117,4 @@ final qSouthAmerica8 = Question(
       ),
       Answer(text: 'Боливия'),
     ],
-    image: 'lima');
+    image: 'santiyago');

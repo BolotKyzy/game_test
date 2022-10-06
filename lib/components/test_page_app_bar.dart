@@ -26,14 +26,14 @@ class TestPageAppBar extends StatelessWidget {
               children: [
                 Text(
                   '$wrongAnswer',
-                  style: const TextStyle(color: AppColors.red, fontSize: 16),
+                  style: const TextStyle(color: AppColors.red, fontSize: 20),
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                 ),
                 Text(
                   '$correctAnswer',
-                  style: const TextStyle(color: AppColors.green, fontSize: 16),
+                  style: const TextStyle(color: AppColors.green, fontSize: 20),
                 ),
               ],
             ),

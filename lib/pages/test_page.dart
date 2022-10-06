@@ -3,7 +3,6 @@ import 'package:which_country/components/test_page_app_bar.dart';
 import 'package:which_country/constants/app_color.dart';
 import 'package:which_country/models/questions.dart';
 import 'package:which_country/pages/home_page.dart';
-import 'package:which_country/pages/result_page.dart';
 
 import '../components/test_slider.dart';
 import '../components/test_variants.dart';
