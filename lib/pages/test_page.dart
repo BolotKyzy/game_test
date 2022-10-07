@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:which_country/components/test_page_app_bar.dart';
 import 'package:which_country/constants/app_color.dart';
+import 'package:which_country/constants/app_text.dart';
 import 'package:which_country/models/questions.dart';
 import 'package:which_country/pages/home_page.dart';
 
@@ -61,6 +62,33 @@ class _TestPageState extends State<TestPage> {
                   });
 
             if (step < widget.questions.length - 1) {
+              if (wrongAnswer == 3) {
+                showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    content: const Text(
+                      textAlign: TextAlign.center,
+                      AppText.lifeFinite,
+                      style: TextStyle(
+                          color: AppColors.red,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'OK'),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                ).then((value) => Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const HomePage(),
+                      ),
+                    ));
+              }
+
               setState(() {
                 sliderValue += 2;
               });
@@ -74,7 +102,7 @@ class _TestPageState extends State<TestPage> {
                 builder: (BuildContext context) => AlertDialog(
                   title: const Text(
                     textAlign: TextAlign.center,
-                    'Your result: ',
+                    AppText.result,
                   ),
                   content: Text(
                     textAlign: TextAlign.center,

@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 class AppText {
   static const String title = 'Дүйнөдөгү борбор шаарлар';
-  static const String europe = 'Europe';
-  static const String australia = 'Australia';
-  static const String southAmerica = 'South America';
-  static const String northAmerica = 'North America';
-  static const String asia = 'Asia';
-  static const String africa = 'Africa';
+  static const String europe = 'Европа';
+  static const String australia = 'Автрпалия';
+  static const String southAmerica = 'Түштүк Америка';
+  static const String northAmerica = 'Түндүк Америка';
+  static const String asia = 'Азия';
+  static const String africa = 'Африка';
+  static const String result = 'Сиздин жыйынтык: ';
+
+  static const String lifeFinite =
+      'Сиздин оюнду улантууга мүмкүнчүлүгүңүз бүттү:( Жаныдан баштаныз';
 }

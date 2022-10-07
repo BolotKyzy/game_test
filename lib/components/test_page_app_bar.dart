@@ -46,7 +46,7 @@ class TestPageAppBar extends StatelessWidget {
             height: 30,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 3,
+                itemCount: 3 - wrongAnswer,
                 itemBuilder: (context, index) {
                   return const Icon(Icons.favorite, color: AppColors.red);
                 }),
